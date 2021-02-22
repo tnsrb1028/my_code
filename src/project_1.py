@@ -58,7 +58,6 @@ if __name__ == "__main__":
         img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
         img_mask = cv2.inRange(img_hsv, lower_green, upper_green)
         img_flip = cv2.flip(img_mask,1)
-        #img_result = cv2.bitwise_and(img, img, mask=img_red)
         cv2.imshow("Screen",img_flip)
 
         non = img_flip.nonzero()
@@ -69,8 +68,6 @@ if __name__ == "__main__":
             target_x = result_x / 58
             target_y = 11-(result_y / 44)
 
-            print(target_x)
-            print(target_y)
             # 거북이 제어
             a = target_x-x
             b = target_y-y
@@ -83,7 +80,7 @@ if __name__ == "__main__":
 
             print("x : ", x)
             print("y : ", y)
-            #print("theta : ", theta)
+            print("theta : ", theta)
             #print("")
 
         else:
